@@ -35,7 +35,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/delete_cat{id}','delete_cat');
     });
     Route::controller(blogsController::class)->group(function(){
+        Route::get('/add_blogs','add_blog');
+        Route::post('/add_blogs','add_blog2');
+
         
+
     });
 });
 
