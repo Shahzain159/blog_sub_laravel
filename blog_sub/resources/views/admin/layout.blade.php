@@ -695,7 +695,7 @@
 
                 </div> --}}
 
-            <div>
+            <div class="container-fluid">
                 @yield('content')
             </div>
                 <!-- /.container-fluid -->
@@ -758,7 +758,7 @@
     <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
     {{-- <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script> --}}
 

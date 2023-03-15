@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\authController;
+use App\Http\Controllers\bcatController;
+use App\Http\Controllers\blogsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +18,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+
+Route::controller(authController::class)->group(function(){
+    Route::get('/login','login');
+    Route::post('/login','login2');
+});
+Route::controller(bcatController::class)->group(function(){
+    
+});
+Route::controller(blogsController::class)->group(function(){
+    
 });
