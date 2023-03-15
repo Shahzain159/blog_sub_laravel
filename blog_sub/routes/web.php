@@ -20,15 +20,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::controller(authController::class)->group(function(){
     Route::get('/login','login');
     Route::post('/login','login2');
+    // Route::get('/register','reg');
+
 });
-Route::controller(bcatController::class)->group(function(){
-    
+Route::group(['middleware' => 'auth'], function () {
+    Route::controller(bcatController::class)->group(function(){
+        Route::get('/index','index');
+        Route::get('/Category','category');
+        Route::post('/Category','category2');
+
+        Route::get('/delete_cat{id}','delete_cat');
+    });
+    Route::controller(blogsController::class)->group(function(){
+        
+    });
 });
-Route::controller(blogsController::class)->group(function(){
-    
-});
+

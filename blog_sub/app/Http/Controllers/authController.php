@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class authController extends Controller
 {
@@ -16,10 +18,17 @@ class authController extends Controller
         // return view('admin.login');
 
         if(Auth::attempt(['email'=>$r->email,'password'=>$r->password])){
-            return redirect('');
+            return redirect('/home');
         }
         else{
             return back()->with('error','Email or Password is Wrong');
         }
     }
+    // public function reg(){
+    //     User::create([
+    //         'name'=>'admin',
+    //         'email'=>'admin@gmail.com',
+    //         'password'=>Hash::make('admin123')
+    //     ]);
+    // }
 }

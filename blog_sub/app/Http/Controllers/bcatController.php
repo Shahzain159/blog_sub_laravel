@@ -7,4 +7,7 @@ use Illuminate\Http\Request;
 class bcatController extends Controller
 {
     //
+    public function index(){
+        return view('admin.index');
+    }
 }

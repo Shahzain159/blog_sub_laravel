@@ -43,12 +43,17 @@
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
                                     @if (Session::has('error'))
+                                    <div class="text-danger">
                                         <p>{{ Session::get('error') }}</p>
+                                    </div>
+                                       
                                     @else
-                                   
                                     <div class="text-danger">
                                         <p></p>
                                     </div>
+                                    @endif
+
+                                   
                                     <form class="user" method="POST">
                                         @csrf
                                         <div class="form-group">
