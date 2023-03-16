@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::controller(authController::class)->group(function(){
-    Route::get('/login','login');
+    Route::get('/login','login')->name('login');
     Route::post('/login','login2');
     // Route::get('/register','reg');
 
@@ -29,7 +29,7 @@ Route::controller(authController::class)->group(function(){
 Route::group(['middleware' => 'auth'], function () {
     Route::controller(bcatController::class)->group(function(){
         Route::get('/index','index');
-        Route::get('/Category','category');
+        Route::get('/Category','category')->name('categories');
         Route::post('/Category','category2');
 
         Route::get('/delete_cat{id}','delete_cat');
